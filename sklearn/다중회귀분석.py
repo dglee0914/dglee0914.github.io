@@ -1,14 +1,37 @@
-#캘리포니아 주택 다중회귀분석
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import warnings
+import matplotlib.font_manager as fm
 from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
+import platform
+import os
+
+system = platform.system()
+
+if system == 'Windows':
+    font_path = r'C:/Windows/Fonts/malgun.ttf'  # 맑은 고딕
+    # 또는
+    # font_path = r'C:\Windows\Fonts\gulim.ttc'  # 굴림
+elif system == 'Darwin':  # macOS
+    font_path = '/System/Library/Fonts/AppleSDGothicNeo.ttc'  # Apple SD Gothic Neo
+    # 또는
+    # font_path = '/Library/Fonts/NanumGothic.ttf'  # 나눔고딕 (설치된 경우)
+elif system == 'Linux':
+    font_path = '/usr/share/fonts/truetype/nanum/NanumGothic.ttf'  # 우분투의 나눔고딕
+
+font_prop = fm.FontProperties(fname=font_path, size=12)
+# matplotlib 설정
+plt.rcParams['font.family'] = 'NanumGothic'
+plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
+
+warnings.filterwarnings('ignore')
+
 
 # 데이터 로드 및 데이터프레임 생성
 housing = fetch_california_housing()
