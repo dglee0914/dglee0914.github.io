@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Endpoint Tester</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        button { margin: 10px 0; padding: 10px; cursor: pointer; }
+        #result { margin-top: 20px; padding: 10px; border: 1px solid #ddd; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>API Endpoint Tester</h1>
+    
+    <button onclick="getUsers()">Get All Users</button>
+    <button onclick="getUser(1)">Get User 1</button>
+    <button onclick="createUser()">Create New User</button>
+    <button onclick="updateUser(1)">Update User 1</button>
+    <button onclick="deleteUser(1)">Delete User 1</button>
+    
+    <div id="result"></div>
+
+    <script>
+        const baseUrl = 'http://localhost:5000/api';
+
+        async function fetchApi(endpoint, method = 'GET', body = null) {
+            const options = {
+                method,
+                headers: { 'Content-Type': 'application/json' },
+            };
+            if (body) options.body = JSON.stringify(body);
+            
+            try {
+                const response = await fetch(`${baseUrl}${endpoint}`, options);
+                const result = await response.json();
+                document.getElementById('result').innerText = JSON.stringify(result, null, 2);
+            } catch (error) {
+                document.getElementById('result').innerText = `Error: ${error.message}`;
+            }
+        }
+
+        function getUsers() {
+            fetchApi('/users');
+        }
+
+        function getUser(id) {
+            fetchApi(`/users/${id}`);
+        }
+
+        function createUser() {
+            const newUser = { name: 'New User', email: 'newuser@example.com' };
+            fetchApi('/users', 'POST', newUser);
+        }
+
+        function updateUser(id) {
+            const updatedUser = { name: 'Updated User' };
+            fetchApi(`/users/${id}`, 'PUT', updatedUser);
+        }
+
+        function deleteUser(id) {
+            fetchApi(`/users/${id}`, 'DELETE');
+        }
+    </script>
+</body>
+</html>
