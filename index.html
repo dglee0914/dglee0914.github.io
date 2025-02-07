@@ -1,162 +1,162 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>달콤한 빵집 - 게시판</title>
-    <style>
-        :root {
-            --primary-color: #f9a825;
-            --secondary-color: #ffd54f;
-            --text-color: #333;
-            --background-color: #f5f5f5;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-        nav {
-            background-color: var(--secondary-color);
-            padding: 0.5rem;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-        }
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .board {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        .board-header {
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            padding: 1rem;
-            font-weight: bold;
-        }
-        .board-item {
-            border-bottom: 1px solid #ddd;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .board-item:last-child {
-            border-bottom: none;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: var(--primary-color);
-            color: white;
-            margin-top: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>우리 베이커리 - 회사 소개</title>
+  <style>
+    /* Reset & 기본 스타일 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background-color: #f8b500;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      color: #fff;
+      font-size: 2em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?bakery') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    .hero h2 {
+      font-size: 3em;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .content {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .content section {
+      margin-bottom: 40px;
+    }
+    .content h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #f8b500;
+      border-bottom: 2px solid #f8b500;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .content p {
+      margin-bottom: 15px;
+      font-size: 1em;
+      line-height: 1.8;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2em;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 5px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>달콤한 빵집</h1>
-        <p>신선한 재료로 매일 정성껏 구워내는 건강한 빵</p>
-    </header>
-
+  <!-- 헤더 및 내비게이션 -->
+  <header>
+    <h1>우리 베이커리</h1>
     <nav>
-        <ul>
-            <li><a href="#notice">공지사항</a></li>
-            <li><a href="#menu">메뉴</a></li>
-            <li><a href="#review">고객 리뷰</a></li>
-        </ul>
+      <ul>
+        <li><a href="#about">회사 소개</a></li>
+        <li><a href="#mission">미션</a></li>
+        <li><a href="#products">메뉴</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main>
-        <section id="notice">
-            <div class="board">
-                <div class="board-header">공지사항</div>
-                <div class="board-item">
-                    <span>2024년 설날 영업 안내</span>
-                    <span>2024-02-01</span>
-                </div>
-                <div class="board-item">
-                    <span>3월 신메뉴 출시 예정</span>
-                    <span>2024-02-15</span>
-                </div>
-                <div class="board-item">
-                    <span>코로나19 방역 수칙 안내</span>
-                    <span>2024-01-10</span>
-                </div>
-            </div>
-        </section>
+  <!-- 히어로 섹션 -->
+  <section class="hero">
+    <h2>따뜻한 빵과 함께하는 행복한 하루</h2>
+  </section>
 
-        <section id="menu">
-            <div class="board">
-                <div class="board-header">메뉴</div>
-                <div class="board-item">
-                    <span>크로와상</span>
-                    <span>2,500원</span>
-                </div>
-                <div class="board-item">
-                    <span>통밀 식빵</span>
-                    <span>4,000원</span>
-                </div>
-                <div class="board-item">
-                    <span>치즈 베이글</span>
-                    <span>3,000원</span>
-                </div>
-                <div class="board-item">
-                    <span>초코 머핀</span>
-                    <span>3,500원</span>
-                </div>
-            </div>
-        </section>
+  <!-- 본문 콘텐츠 -->
+  <div class="content">
+    <!-- 회사 소개 섹션 -->
+    <section id="about">
+      <h2>회사 소개</h2>
+      <p>
+        우리 베이커리는 신선한 재료와 정성 가득한 레시피로 매일 아침 최고의 빵을 제공합니다.
+        전통적인 제빵 기법과 현대적인 감각이 어우러져 고객님들께 따뜻한 미소와 최고의 품질을 선사합니다.
+      </p>
+      <p>
+        창업 이래, 우리는 지역 사회와 함께 성장하며 고객의 일상에 행복과 즐거움을 전하는 브랜드로 자리매김해왔습니다.
+      </p>
+    </section>
 
-        <section id="review">
-            <div class="board">
-                <div class="board-header">고객 리뷰</div>
-                <div class="board-item">
-                    <span>정말 맛있어요! 매일 아침 들립니다.</span>
-                    <span>김OO</span>
-                </div>
-                <div class="board-item">
-                    <span>통밀 식빵이 정말 건강한 맛이에요.</span>
-                    <span>이OO</span>
-                </div>
-                <div class="board-item">
-                    <span>가족들이 너무 좋아해요. 감사합니다!</span>
-                    <span>박OO</span>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- 미션 & 비전 섹션 -->
+    <section id="mission">
+      <h2>미션 &amp; 비전</h2>
+      <p><strong>미션:</strong> 매일 아침 신선하고 건강한 빵으로 고객의 삶에 활력을 불어넣습니다.</p>
+      <p>
+        <strong>비전:</strong> 지속 가능한 재료 사용과 혁신적인 레시피 개발로 글로벌 베이커리 브랜드로 도약하는 것입니다.
+      </p>
+    </section>
 
-    <footer>
-        <p>주소: 서울시 강남구 빵길 123번지 달콤한 빵집 | 전화: 02-123-4567</p>
-        <p>영업시간: 평일 07:00-20:00, 주말 및 공휴일 08:00-19:00</p>
-        <p>&copy; 2024 달콤한 빵집. 모든 권리 보유.</p>
-    </footer>
+    <!-- 메뉴 섹션 -->
+    <section id="products">
+      <h2>우리의 메뉴</h2>
+      <p>
+        다양한 종류의 빵, 케이크, 그리고 디저트를 만나보실 수 있습니다. 각 제품은 고객의 건강을 최우선으로 고려하여
+        자연 재료를 사용한 수제 빵으로 매일 신선하게 구워집니다.
+      </p>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact">
+      <h2>연락처</h2>
+      <p><strong>주소:</strong> 서울특별시 예시구 예시동 123-45</p>
+      <p><strong>전화:</strong> 02-1234-5678</p>
+      <p><strong>이메일:</strong> info@ourbakery.co.kr</p>
+    </section>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>&copy; 2025 우리 베이커리. All rights reserved.</p>
+  </footer>
 </body>
 </html>
